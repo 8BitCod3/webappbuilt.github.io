@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Portfolio</title>
+    <!-- Use Google Font for a modern look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0D0F12;
+        }
+
+        /* Gradient hero background */
+        .hero-bg {
+            background: radial-gradient(at 50% 10%, #1a202c, transparent),
+                        radial-gradient(at 10% 90%, #2b3040, transparent),
+                        radial-gradient(at 90% 90%, #1a202c, transparent);
+        }
+        
+        /* Custom scrollbar for a premium feel */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1a202c;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #3B82F6;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2563EB;
+        }
+    </style>
+</head>
+<body class="text-white antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-colors duration-300">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#" class="font-bold text-xl text-blue-400 hover:text-blue-500 transition duration-300">YourName.dev</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="text-sm font-medium hover:text-blue-400 transition duration-300">About</a>
+                <a href="#services" class="text-sm font-medium hover:text-blue-400 transition duration-300">Services</a>
+                <a href="#portfolio" class="text-sm font-medium hover:text-blue-400 transition duration-300">Portfolio</a>
+                <a href="#contact" class="text-sm font-medium hover:text-blue-400 transition duration-300">Contact</a>
+            </div>
+            <button id="mobileMenuBtn" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="md:hidden hidden bg-[#0D0F12] p-4 text-center border-t border-gray-800">
+            <a href="#about" class="block py-2 text-sm font-medium hover:text-blue-400 transition duration-300">About</a>
+            <a href="#services" class="block py-2 text-sm font-medium hover:text-blue-400 transition duration-300">Services</a>
+            <a href="#portfolio" class="block py-2 text-sm font-medium hover:text-blue-400 transition duration-300">Portfolio</a>
+            <a href="#contact" class="block py-2 text-sm font-medium hover:text-blue-400 transition duration-300">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative hero-bg min-h-screen flex items-center justify-center text-center px-4 sm:px-6 lg:px-8 overflow-hidden">
+            <div class="relative z-10 space-y-6 max-w-3xl mx-auto">
+                <h1 class="text-4xl sm:text-6xl md:text-7xl font-bold leading-tight">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 transition-all duration-500 hover:tracking-wide">Digital Experiences</span>
+                    that Stand Out.
+                </h1>
+                <p class="text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl mx-auto animate-pulse">
+                    I craft modern, dynamic, and intuitive web solutions for businesses and brands. Let's build something great together.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
+                    <a href="#contact" class="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold rounded-full shadow-lg transition transform hover:scale-105 duration-300">
+                        Get in Touch
+                    </a>
+                    <a href="#portfolio" class="px-8 py-3 bg-gray-800 text-gray-200 font-semibold rounded-full hover:bg-gray-700 transition transform hover:scale-105 duration-300">
+                        View My Work
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About/Services Section -->
+        <section id="services" class="py-20 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto text-center">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4">What I Do</h2>
+                <p class="text-gray-400 max-w-3xl mx-auto mb-12">I specialize in creating beautiful, functional, and user-centric digital products that drive engagement and business growth.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Service 1 -->
+                    <div class="bg-gray-800 rounded-2xl p-8 transform hover:scale-105 transition duration-300 hover:bg-gray-700">
+                        <svg class="w-12 h-12 text-blue-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9.75 14L14.25 14L14.25 17M12 21L12 14M17.25 12L12.75 12M17.25 12L12.75 12M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <h3 class="text-xl font-semibold mb-2">Web Development</h3>
+                        <p class="text-gray-400 text-sm">Crafting fast, responsive, and robust websites with a focus on modern frameworks and clean code.</p>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="bg-gray-800 rounded-2xl p-8 transform hover:scale-105 transition duration-300 hover:bg-gray-700">
+                        <svg class="w-12 h-12 text-blue-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18.75L12 15L15 15L15 18.75M12 18.75L12 22.5M12 18.75L12 15M15 15L15 18.75M15 15L15 18.75M12 21a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <h3 class="text-xl font-semibold mb-2">UI/UX Design</h3>
+                        <p class="text-gray-400 text-sm">Designing intuitive and engaging user interfaces that prioritize user experience and aesthetic appeal.</p>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="bg-gray-800 rounded-2xl p-8 transform hover:scale-105 transition duration-300 hover:bg-gray-700">
+                        <svg class="w-12 h-12 text-blue-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20.25a9.75 9.75 0 11-19.5 0 9.75 9.75 0 0119.5 0zM12 18.75L12 15L15 15L15 18.75M12 18.75L12 22.5M12 18.75L12 15M15 15L15 18.75M15 15L15 18.75M12 21a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <h3 class="text-xl font-semibold mb-2">API Integration</h3>
+                        <p class="text-gray-400 text-sm">Seamlessly connecting your website to third-party services for enhanced functionality and data access.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="py-20 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto text-center">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4">My Latest Work</h2>
+                <p class="text-gray-400 max-w-3xl mx-auto mb-12">Take a look at some of the projects I've built. Each project is a reflection of my commitment to quality and innovation.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 hover:bg-gray-700">
+                        <img src="https://placehold.co/800x600/1F2937/FFFFFF?text=Project+1" alt="Project 1" class="w-full h-48 object-cover">
+                        <div class="p-6 text-left">
+                            <h3 class="text-lg font-semibold mb-1">Project Name</h3>
+                            <p class="text-gray-400 text-sm mb-4">A brief description of this project and the technologies used, such as React, Node.js, and Tailwind.</p>
+                            <a href="#" class="inline-block text-sm font-medium text-blue-400 hover:text-blue-500 transition duration-300">View Project &rarr;</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 hover:bg-gray-700">
+                        <img src="https://placehold.co/800x600/1F2937/FFFFFF?text=Project+2" alt="Project 2" class="w-full h-48 object-cover">
+                        <div class="p-6 text-left">
+                            <h3 class="text-lg font-semibold mb-1">E-commerce Platform</h3>
+                            <p class="text-gray-400 text-sm mb-4">An elegant and responsive e-commerce site with a modern design and seamless user flow.</p>
+                            <a href="#" class="inline-block text-sm font-medium text-blue-400 hover:text-blue-500 transition duration-300">View Project &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 hover:bg-gray-700">
+                        <img src="https://placehold.co/800x600/1F2937/FFFFFF?text=Project+3" alt="Project 3" class="w-full h-48 object-cover">
+                        <div class="p-6 text-left">
+                            <h3 class="text-lg font-semibold mb-1">SaaS Application</h3>
+                            <p class="text-gray-400 text-sm mb-4">A scalable software-as-a-service application built for business analytics and reporting.</p>
+                            <a href="#" class="inline-block text-sm font-medium text-blue-400 hover:text-blue-500 transition duration-300">View Project &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto text-center">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4">Let's Connect</h2>
+                <p class="text-gray-400 max-w-xl mx-auto mb-12">I'm always open to new opportunities and collaborations. Feel free to send me a message and let's discuss your project.</p>
+
+                <form id="contactForm" class="max-w-lg mx-auto space-y-6">
+                    <div>
+                        <input type="text" id="name" placeholder="Your Name" required class="w-full p-4 bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 transition duration-300">
+                    </div>
+                    <div>
+                        <input type="email" id="email" placeholder="Your Email" required class="w-full p-4 bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 transition duration-300">
+                    </div>
+                    <div>
+                        <textarea id="message" rows="5" placeholder="Your Message" required class="w-full p-4 bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 transition duration-300"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="w-full px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold rounded-lg shadow-lg transition transform hover:scale-105 duration-300">
+                            Send Message
+                        </button>
+                    </div>
+                    <div id="statusMessage" class="hidden mt-4 p-3 rounded-lg text-center"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-8 text-center text-gray-400 text-sm border-t border-gray-800">
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
+        <div class="mt-2 space-x-4">
+            <a href="#" class="hover:text-blue-400 transition duration-300">LinkedIn</a>
+            <a href="#" class="hover:text-blue-400 transition duration-300">Twitter</a>
+            <a href="#" class="hover:text-blue-400 transition duration-300">GitHub</a>
+        </div>
+    </footer>
+
+    <!-- JavaScript for smooth scrolling, mobile menu, and form handling -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.querySelector('header');
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const contactForm = document.getElementById('contactForm');
+            const statusMessage = document.getElementById('statusMessage');
+            const links = document.querySelectorAll('a[href^="#"]');
+
+            // Header background on scroll
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('bg-gray-900', 'bg-opacity-90', 'backdrop-blur-sm');
+                } else {
+                    header.classList.remove('bg-gray-900', 'bg-opacity-90', 'backdrop-blur-sm');
+                }
+            });
+
+            // Mobile menu toggle
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Hide mobile menu on link click
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (!mobileMenu.classList.contains('hidden')) {
+                         mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+
+            // Smooth scrolling for anchor links
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Simple form submission handler
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                statusMessage.classList.remove('hidden', 'bg-red-500');
+                statusMessage.classList.add('bg-green-500', 'text-white');
+                statusMessage.textContent = 'Message sent successfully! (This is a demo)';
+                contactForm.reset();
+                
+                // Automatically hide the message after 5 seconds
+                setTimeout(() => {
+                    statusMessage.classList.add('hidden');
+                }, 5000);
+            });
+        });
+    </script>
+
+</body>
+</html>
